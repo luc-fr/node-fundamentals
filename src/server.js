@@ -22,7 +22,11 @@ http.createServer(function(request, response) {
     //     return;
     // }
 
-    response.end('<a href="#">Hello!</a>')
+    // response.end('<a href="#">Hello!</a>')
+    
+    if (request.url === '/users') {
+        response.end(JSON.stringify(users));
+    }
 
 }).listen(3000);
 
